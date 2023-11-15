@@ -1,0 +1,111 @@
+@import url("https://use.typekit.net/yaz8oqw.css");
+
+/* ==================== variables ==================== */
+:root {
+    --font-display: "proxima-nova-extra-wide", sans-serif;
+    --font-paragraph: "proxima-nova", sans-serif;
+    --font-size: 16px;
+    --h1-scale: 10;
+    --h1-transform: uppercase;
+    --h2-scale: 3;
+    --very-big-gap: 100px;
+    --big-gap: 50px;
+    --small-gap: 20px;
+    --blockquote-scale: 1.5;
+}
+
+/* ==================== Global margin ==================== */
+.margin {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==================== Nav bar ==================== */
+nav {
+    padding-top: var(--small-gap);
+    padding-bottom: var(--small-gap);
+}
+nav ol{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* ==================== header ==================== */
+h1 {
+    line-height: 0.9;
+    margin-top: var(--very-big-gap);
+    margin-bottom: var(--big-gap);
+
+    margin-left: -140px;
+    margin-right: -140px;
+}
+h1 div:nth-child(2) {
+    margin-left: 10rem;
+}
+h1 div:nth-child(3) {
+    text-align: right;
+}
+.direction-1, .direction-3 {
+    display: none;
+}
+
+hgroup > p {
+    font-size: calc(2 * var(--font-size));
+    margin-bottom: var(--big-gap);
+    position: absolute;
+    top: 180px;
+    padding-left: 750px;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+}
+address {
+    position: absolute;
+    top: 550px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* ==================== main ==================== */
+main > .margin {
+    display: flex;
+    flex-direction: column;
+    /* align-items: end; */
+}
+main > .margin > p {
+    max-width: 40rem;
+    line-height: 1.5;
+}
+main > .margin > p{
+    margin-top: var(--small-gap);
+}
+
+blockquote {
+    margin-top: var(--big-gap);
+    margin-bottom: var(--big-gap);
+    max-width: 60rem;
+    align-self: flex-start;
+    margin-left: -60px;
+    padding-left: 60px;
+    background-color: white;
+}
+blockquote p {
+    font-weight: bold;
+    font-style: italic;
+}
+
+h2 {
+    margin-top: var(--very-big-gap);
+    margin-bottom: var(--big-gap);
+
+    align-self: flex-start;
+    margin-left: -60px;
+    padding-left: 5px;
+    /* padding-left: 60px; */
+    background-color: white;
+    text-transform: uppercase;
+}
