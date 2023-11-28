@@ -71,11 +71,12 @@ main p a{
 a{
     transition: 0.5s;
 }
-a:hover {
-    background-color: black;
-	color: white;
+@media (hover: hover) {
+    a:hover {
+        background-color: black;
+        color: white;
+    }
 }
-
 h1 {
     font-size: calc( var(--font-size) * var(--h1-scale) );
 }
@@ -252,6 +253,42 @@ h1 {
         margin-bottom: 32px;
     }
 }
+
+/* header easter egg */
+@media (hover: hover) {
+    .h1-p {
+        display: inline-block;
+        width: 95px;
+    }
+    .h1-p:hover{
+        font-family: "lores-9-minus-wide", sans-serif;
+        font-size: calc( var(--font-size) * var(--h1-scale) *0.95 );
+        line-height: 0.5;
+        position: relative;
+        left: -5px;
+    }
+    .h1-g{
+        display: inline-block;
+        width: 125px;
+    }
+    .h1-g:hover{
+        font-family: "t26-carbon", monospace;
+        font-size: calc( var(--font-size) * var(--h1-scale) * 1.2 );
+        line-height: 0.5;
+        position: relative;
+        right: -10px;
+    }
+    .h1-a{
+        display: inline-block;
+        width: 110px;
+    }
+    .h1-a:hover{
+        font-family: "futura-pt-bold", sans-serif;
+        font-size: calc( var(--font-size) * var(--h1-scale) *0.95 );
+        line-height: 0.5;
+    }
+}
+
 /* ==================== main ==================== */
 
 main > div{
