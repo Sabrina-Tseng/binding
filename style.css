@@ -21,6 +21,7 @@
     --very-big-gap: 100px;
     --big-gap: 50px;
     --small-gap: 20px;
+    --paragraph-gap: 20px;
     --right-indent: 50px;
 
     /* colors */
@@ -42,6 +43,7 @@
         /* gap sizes */
         --very-big-gap: 200px;
         --big-gap: 100px;
+        --paragraph-gap: 30px;
         --right-indent: 0px;
     }
 }
@@ -50,20 +52,30 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    font-size: var(--font-size);
+    font-size: calc( var(--font-size) + 2px);
     color: var(--text-color);
     background-color: var(--bg-color);
 }
 h1, h2, h3, h4, h5 {
     font-family: var(--display-font);
     text-transform: uppercase;
-    line-height: 120%;
+    line-height: 100%;
     -webkit-hyphens: manual; /* Safari */
 	hyphens: manual;
 }
 p{
     line-height: var(--line-height);
     max-width: 40em;
+}
+main p a{
+    text-decoration: underline;
+}
+a{
+    transition: 0.5s;
+}
+a:hover {
+    background-color: black;
+	color: white;
 }
 
 h1 {
@@ -84,6 +96,17 @@ blockquote p{
     font-style: italic;
     line-height: 1.5;
     max-width: 20em;
+}
+sup{
+    vertical-align: super;
+    font-size: smaller;
+    line-height: 1;
+}
+cite, em{
+    font-style: italic;
+}
+.footnotes{
+    font-size: calc( var(--font-size) * 0.8 );
 }
 
 /* ==================== Global margin ==================== */
@@ -111,6 +134,7 @@ nav {
     padding-top: var(--small-gap);
     padding-bottom: var(--small-gap);
     line-height: 1.5;
+    font-size: var(--font-size);
 }
 nav div ol{
     display: flex;
@@ -131,10 +155,6 @@ nav div ol{
     bottom: var(--small-gap);
     right: var(--small-gap);
     position: fixed;
-}
-nav a:hover {
-    background-color: black;
-	color: white;
 }
 
 #desktop-nav{
@@ -182,6 +202,7 @@ nav a:hover {
 #article-3 h2{
     font-family: "futura-pt-bold", sans-serif;
 }
+
 /* ==================== header ==================== */
 header {
     padding-top: var(--big-gap);
@@ -217,15 +238,24 @@ h1 {
     }
 }
 /* ==================== main ==================== */
+
 main > div{
     padding-top: var(--very-big-gap);
     border-top-color: var(--text-color);
     border-top-style: solid;
     border-top-width: 1px;
 }
-main > div > p {
-    margin-bottom: var(--small-gap);
+main > div > p, main > div > div >p {
+    margin-bottom: var(--paragraph-gap);
+    /* max-width: 720px; */
 }
+
+h2 {
+    margin-top: var(--very-big-gap);
+    margin-bottom: var(--big-gap);
+}
+
+/* quote */
 
 blockquote {
     padding-top: var(--very-big-gap);
@@ -246,7 +276,6 @@ blockquote {
         padding-right: calc( (100vw - 1280px) / 2 + var(--small-gap));
     }
 }
-
 .quote-bg {
     position: relative;
     height: 0px;
@@ -262,16 +291,27 @@ blockquote {
     z-index: -1;
     transition: 0.5s;
 }
-blockquote:active, blockquote:hover {
+blockquote:hover {
     color: white;
 }
-blockquote:active .quote-bg-color,blockquote:hover .quote-bg-color {
+blockquote:hover .quote-bg-color {
     background-color: black;
 }
 
+/* footnotes */
 
+.p-flex{
+    display: flex;
+    flex-direction: column;
+}
 
-h2 {
-    margin-top: var(--very-big-gap);
-    margin-bottom: var(--big-gap);
+@media (min-width: 1280px){
+    .p-flex{
+        flex-direction: row;
+        gap: var(--big-gap);
+        align-items: end;
+    }
+    .p-flex p:first-child{
+        flex-shrink: 0;
+    }
 }
