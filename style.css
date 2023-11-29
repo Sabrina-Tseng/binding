@@ -8,7 +8,6 @@
 
 /* ==================== variables ==================== */
 :root {
-
     /* font sizes */
     --font-size: 14px;
     --h1-scale: 5;
@@ -376,11 +375,10 @@ blockquote {
 }
 .quote-bg-color {
     position: fixed;
-    top: -150vh;
-    height: 300vh;
+    top: 0;
+    height: 100vh;
     left: 0;
     width: 100vw;
-    color: var(--bg-color);
     background-color: transparent;
     z-index: -2;
     transition: 0.5s;
