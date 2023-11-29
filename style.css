@@ -268,14 +268,14 @@ h1 {
 }
 
 /* header easter egg */
-@media (hover: hover) {
+@media (hover: hover) and (min-width: 1280px) {
     .h1-p {
         display: inline-block;
         width: 95px;
     }
     .h1-p:hover{
         font-family: "lores-9-minus-wide", sans-serif;
-        font-size: calc( var(--font-size) * var(--h1-scale) *0.95 );
+        font-size: calc( var(--font-size) * var(--h1-scale) *0.97 );
         line-height: 0.5;
         position: relative;
         left: -5px;
@@ -340,10 +340,6 @@ blockquote {
         padding-right: calc( (100vw - 1280px) / 2 + var(--small-gap));
     }
 }
-.quote-bg {
-    position: relative;
-    height: 0px;
-}
 .quote-bg-color {
     position: fixed;
     top: -150vh;
@@ -351,7 +347,7 @@ blockquote {
     left: 0;
     width: 100vw;
     color: var(--bg-color);
-    background-color: var(--bg-color);
+    background-color: transparent;
     z-index: -2;
     transition: 0.5s;
 }
