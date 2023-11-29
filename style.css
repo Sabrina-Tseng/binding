@@ -28,6 +28,7 @@
     --inverse-bg-color: black;
     --text-color: #202020;
     --quote-color: #E5E5E5;
+    --sup-color: transparent;
 }
 @media (min-width: 500px){
     :root {
@@ -73,6 +74,8 @@ body{
         --inverse-bg-color: white;
         --text-color: #E5E5E5;
         --quote-color: #202020;
+        --sup-color: yellow;
+        --sup-text-color: #202020;
     }
 }
 
@@ -159,24 +162,53 @@ blockquote p{
 }
 
 /* anchor */
+a {
+    display: inline-block;
+}
+.footnotes a{
+    display: inline;
+}
 main p a{
     text-decoration: underline;
 }
-nav a, main a{
-    transition: 0.5s;
-}
 @media (hover: hover) {
+    nav a, main a{
+        transition: 0.5s;
+    }
     nav a:hover, main a:hover {
-        background-color: var(--inverse-bg-color);
-        color: var(--bg-color);
+        /* background-color: var(--inverse-bg-color);
+        color: var(--bg-color); */
+        background-color: yellow;
+        rotate: -2deg;
+        color: black;
     }
 }
-
+@media (hover: none) {
+    main a{
+        background-color: yellow;
+        rotate: -2deg;
+        color: black;
+    }
+    #homepage h2{
+        background-color: yellow;
+        rotate: -2deg;
+        color: black;
+    }
+}
 /* superscript */
 sup{
     vertical-align: super;
     font-size: smaller;
-    line-height: 1;
+    line-height: 15px;
+    color: black;
+    background-color: yellow;
+
+    /* make a circle */
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    border-radius: 100% 100%;
 }
 
 /* italic */
@@ -339,6 +371,7 @@ h1 {
         line-height: 0.5;
         position: relative;
         left: -5px;
+        background-color: yellow;
     }
     .h1-g{
         display: inline-block;
@@ -350,6 +383,7 @@ h1 {
         line-height: 0.5;
         position: relative;
         right: -10px;
+        background-color: yellow;
     }
     .h1-a{
         display: inline-block;
@@ -359,9 +393,23 @@ h1 {
         font-family: "futura-pt-bold", sans-serif;
         font-size: calc( var(--font-size) * var(--h1-scale) *0.95 );
         line-height: 0.5;
+        background-color: yellow;
     }
 }
-
+@media (prefers-color-scheme: dark) {
+    .h1-p:hover{
+        background-color: transparent;
+        color: yellow;
+    }
+    .h1-g:hover{
+        background-color: transparent;
+        color: yellow;
+    }
+    .h1-a:hover{
+        background-color: transparent;
+        color: yellow;
+    }
+}
 /* ==================== main ==================== */
 
 main > div{
@@ -411,7 +459,7 @@ blockquote {
     transition: 0.5s;
 }
 blockquote:hover {
-    color: var(--bg-color);
+    color: yellow;
 }
 blockquote:hover .quote-bg-color {
     background-color: var(--inverse-bg-color);
