@@ -30,8 +30,14 @@
     --text-color: #202020;
     --quote-color: #E5E5E5;
 }
+@media (min-width: 500px){
+    :root {
+        /* font sizes */
+        --h1-scale: 7;
+        --h2-scale: 4;
+    }
+}
 @media (min-width: 720px){
-
     :root {
         /* font sizes */
         --font-size: 14px;
@@ -39,15 +45,9 @@
         --h2-scale: 6;
         --blockquote-scale: 3;
         --line-height: 2;
-
-        /* gap sizes */
-        --very-big-gap: 200px;
-        --big-gap: 100px;
-        --paragraph-gap: 30px;
     }
 }
 @media (min-width: 1280px){
-
     :root {
         /* font sizes */
         --font-size: 16px;
@@ -74,6 +74,24 @@ body{
         --inverse-bg-color: white;
         --text-color: #E5E5E5;
         --quote-color: #202020;
+    }
+}
+
+/* breaks */
+.desktop-only{
+    display: none;
+}
+@media (min-width: 1280px){
+    .desktop-only{
+        display: inline;
+    }
+}
+.mobile-only{
+    display: inline;
+}
+@media (min-width: 1280px){
+    .mobile-only{
+        display: none;
     }
 }
 /* ==================== font ==================== */
@@ -189,6 +207,7 @@ nav div ol{
 }
 .nav-class{
     background-color: var(--bg-color);
+    width: 230px;
 }
 .nav-page-name{
     z-index: -1;
