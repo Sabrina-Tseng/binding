@@ -30,7 +30,22 @@
     --text-color: #202020;
     --quote-color: #E5E5E5;
 }
+@media (min-width: 720px){
 
+    :root {
+        /* font sizes */
+        --font-size: 14px;
+        --h1-scale: 10;
+        --h2-scale: 6;
+        --blockquote-scale: 3;
+        --line-height: 2;
+
+        /* gap sizes */
+        --very-big-gap: 200px;
+        --big-gap: 100px;
+        --paragraph-gap: 30px;
+    }
+}
 @media (min-width: 1280px){
 
     :root {
@@ -186,7 +201,7 @@ nav div ol{
 #desktop-nav{
     display: none;
 }
-@media (min-width:800px){
+@media (min-width:720px){
     #desktop-nav{
         display: block;
     }
