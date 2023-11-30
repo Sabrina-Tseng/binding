@@ -199,16 +199,17 @@ main p a{
 sup{
     vertical-align: super;
     font-size: smaller;
-    line-height: 15px;
-    color: black;
-    background-color: yellow;
+    line-height: 1;
+    /* color: black;
+    background-color: yellow; */
 
     /* make a circle */
-    display: inline-block;
+    /* display: inline-block;
     height: 15px;
     width: 15px;
+    line-height: 15px;
     text-align: center;
-    border-radius: 100% 100%;
+    border-radius: 100% 100%; */
 }
 
 /* italic */
@@ -459,7 +460,15 @@ blockquote {
     transition: 0.5s;
 }
 blockquote:hover {
-    color: yellow;
+    color: var(--bg-color);
+}
+blockquote p{
+    transition: 0.5s;
+}
+blockquote p:hover {
+    color: black;
+    background-color: yellow;
+    rotate: -2deg;
 }
 blockquote:hover .quote-bg-color {
     background-color: var(--inverse-bg-color);
